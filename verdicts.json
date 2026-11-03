@@ -1,0 +1,150 @@
+{
+ "schema": 1,
+ "circuit": "dec",
+ "record": {
+  "luts": 258,
+  "levels": 2,
+  "board": {
+   "size": {
+    "luts": 264,
+    "levels": 2,
+    "authors": "L. Machado and J. Cortadella",
+    "year": 2018
+   },
+   "depth": {
+    "luts": 264,
+    "levels": 2
+   }
+  },
+  "axes": [
+   "size"
+  ],
+  "candidate": "c99a2dd1fe0de588b36cdc4019f52d578d1a608d419f9d5f311f5bb0b7027713",
+  "netlist_sha256": "428d4987578e1714993052183f9d22af8275b1f39f79f6a17848392a005889f6",
+  "generator_sha256": "5f92f43880b5a061859a2779bda9a6cc9fcb15bb98e7b382d9047189349380a1",
+  "judge_sha256": "d37078e42615cca5007caf5f92b5afafd7fa282bc75534e66d8c53f373f7f7a1"
+ },
+ "checker_a": {
+  "ledger": "s000007",
+  "verdict": "EQUIVALENT",
+  "seconds": 1.772,
+  "command": "cec -T 300 -C 1000000 /tmp/judge_a_m4x2k8s5/golden.aig /tmp/judge_a_m4x2k8s5/candidate.blif"
+ },
+ "checker_b": {
+  "ledger": "s000007p",
+  "class": "RECORD",
+  "verdict": "EQUIVALENT",
+  "seconds": 15.613,
+  "stats": {
+   "cake_checked": 256,
+   "kernel_checked": 256,
+   "lemmas": 256,
+   "sat": 1,
+   "sat_calls": 257
+  },
+  "evidence": "record/lemmas.tar.gz",
+  "evidence_bytes": 50570
+ },
+ "reproduction": {
+  "ledger": "rc99a2dd1fe0d",
+  "ok": true,
+  "seconds": 488.993,
+  "memory_peak_mb": 172.6
+ },
+ "reverification": {
+  "a": "EQUIVALENT",
+  "b": "EQUIVALENT",
+  "reproduced": true,
+  "store_intact": true,
+  "confirmed": true
+ },
+ "transfers": [
+  {
+   "ledger": "tc99a2dd1fe0d_arbiter",
+   "circuit": "arbiter",
+   "generator": "OK",
+   "checker_a": "EQUIVALENT",
+   "luts": 259,
+   "levels": 93
+  },
+  {
+   "ledger": "tc99a2dd1fe0d_router",
+   "circuit": "router",
+   "generator": "OK",
+   "checker_a": "EQUIVALENT",
+   "luts": 18,
+   "levels": 8
+  },
+  {
+   "ledger": "tc99a2dd1fe0d_mem_ctrl",
+   "circuit": "mem_ctrl",
+   "generator": "OK",
+   "checker_a": "EQUIVALENT",
+   "luts": 1669,
+   "levels": 27
+  },
+  {
+   "ledger": "tc99a2dd1fe0d_voter",
+   "circuit": "voter",
+   "generator": "OK",
+   "checker_a": "EQUIVALENT",
+   "luts": 1145,
+   "levels": 33
+  },
+  {
+   "ledger": "tc99a2dd1fe0d_div",
+   "circuit": "div",
+   "generator": "OK",
+   "checker_a": "EQUIVALENT",
+   "luts": 3082,
+   "levels": 1528
+  }
+ ],
+ "optimality": {
+  "claim": "257 LUTs is impossible at any depth; 1 level is impossible (each output depends on all 8 inputs); so 258 LUTs at 2 levels is optimal on both axes",
+  "instance": {
+   "file": "bound_257.cnf.gz",
+   "writer": "record/generator/bound.py",
+   "sha256_uncompressed": "cc7fb8f24aa9cec2ed7bb1524c28dc48b33eaa010890a0f2084e65e92b4c636d",
+   "solver": {
+    "tool": "cadical",
+    "binary_sha256": "4c9e2a21d9eab0a3e72a411b9e732f30655238d72220b1952a3b3bb0602d30ff",
+    "command": "cadical --plain --lrat --no-binary -q bound_257.cnf bound_257.lrat",
+    "answer": "s UNSATISFIABLE",
+    "exit": 20
+   },
+   "refutation": {
+    "file": "bound_257.lrat.gz",
+    "sha256_uncompressed": "c885e37d8cebc29c46a268555b766e0cc47cbc447eb150e5111155acde0950d7",
+    "checker": {
+     "tool": "cake_lpr",
+     "binary_sha256": "98c1649dc01f6ba38e4424beeff1b4681069b6175d90047b8c2c73316cd9ef2f",
+     "command": "cake_lpr bound_257.cnf bound_257.lrat",
+     "answer": "s VERIFIED UNSAT",
+     "exit": 0
+    }
+   }
+  },
+  "control": {
+   "file": "control_n7.cnf.gz",
+   "writer": "bound_base.py (BASE = 2; BASE = 3 writes the bound instance clause for clause)",
+   "sha256_uncompressed": "ca492b01f4a7bdb9e11096334a6791e31874c4e0eb1ced832a020d72b4500242",
+   "answer": "s SATISFIABLE",
+   "exit": 10
+  }
+ },
+ "generator_runs": {
+  "local": {
+   "runs": 2,
+   "identical_output": true,
+   "first_run_seconds": 387.98,
+   "peak_kb": 111448,
+   "sat_solve_seconds": [
+    378.7,
+    381.0
+   ]
+  },
+  "judge_generate_seconds": 354.263,
+  "server_reproduction_seconds": 488.993
+ }
+}
