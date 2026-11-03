@@ -26,11 +26,16 @@ which CaDiCaL answers SATISFIABLE; BASE = 3 writes the bound instance clause for
 because every output depends on all 8 inputs. Every hash, command and answer is in `verdicts.json`.
 
 ## Reproduce
-From `record/generator/`, in Linux with python3 and CaDiCaL on PATH:
+From a fresh checkout of this repository, on Linux with python3 and CaDiCaL on PATH. The benchmark is fetched from
+the board at the pinned commit (sha256 `38def606e795975e469273411ee9217bc43656c57e6f6eeda3ea640452fa3443`):
 ```bash
-bash generate.sh dec ../../../../benchmarks/golden/dec.aig ../../../../state/starts/dec_size.blif ../../../../state/starts/dec_depth.blif
+curl -LO https://raw.githubusercontent.com/lsils/benchmarks/82d8cc6910419298e713a46644ed59fd3df53038/random_control/dec.aig
+cd record/generator && python3 decsyn.py ../../dec.aig out.blif && sha256sum out.blif ../out.blif
 ```
-writes `out.blif` deterministically (CaDiCaL on a fixed CNF; about 6 minutes). To recheck the bound:
+writes `out.blif` deterministically (CaDiCaL on a fixed CNF; 6 to 8 minutes) and prints the same hash for both files,
+`428d4987578e1714993052183f9d22af8275b1f39f79f6a17848392a005889f6`. `generate.sh` is the judge's wrapper around the
+same call; its two trailing arguments are the board start netlists, used only when the circuit is not a decoder.
+To recheck the bound, from the repository root:
 ```bash
 gunzip -k bound_257.cnf.gz bound_257.lrat.gz && cake_lpr bound_257.cnf bound_257.lrat
 ```
