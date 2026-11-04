@@ -90,20 +90,31 @@ def decode(model, meta):
         fanin = []
         for p in range(K):
             chosen = [s for s, sv in meta['sel'][j][p].items() if model.get(sv)]
-            assert len(chosen) == 1
+            if len(chosen) != 1:
+                raise ValueError(f'model selects {len(chosen)} signals for pin {p} of node {j}')
             fanin.append(chosen[0])
         table = sum(1 << t for t in range(1 << K) if model.get(meta['tt'][j][t]))
         nodes.append((fanin, table))
     outputs = []
     for i in range(1 << n):
         js = [j for j in range(m) if model.get(meta['out'][i][j])]
-        assert js
+        if not js:
+            raise ValueError(f'model assigns no node to minterm {i}')
         outputs.append(js[0])
     return nodes, outputs
 
 
 def simulate(nodes, outputs, K, n):
-    """Independent check of a decoded network: every output node is its minterm on every pattern."""
+    """Independent check of a decoded network: every output node is its minterm on every pattern. Returns the
+    number of (pattern, output) pairs that differ, or 'invalid' when the nodes are not a circuit in index order
+    (wrong pin count, oversized table, or a pin reading a node at or after its reader); a caller treats anything but 0
+    as a failure."""
+    m = len(nodes)
+    for j, (fanin, table) in enumerate(nodes):
+        if len(fanin) != K or not 0 <= table < 1 << (1 << K) or any(s < 0 or s > n + j for s in fanin):
+            return 'invalid'
+    if len(outputs) != 1 << n or any(not 0 <= j < m for j in outputs):
+        return 'invalid'
     bad = 0
     for x in range(1 << n):
         value = {}
@@ -115,7 +126,6 @@ def simulate(nodes, outputs, K, n):
                 elif s == n:
                     bit = 0
                 else:
-                    assert s - n - 1 < j, 'fanin must precede the node'
                     bit = value[s - n - 1]
                 idx |= bit << p
             value[j] = (table >> idx) & 1

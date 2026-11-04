@@ -114,6 +114,17 @@ def check(blif, n):
     return luts, max(level[f'o{q}'] for q in range(P)), max_fanin, bad
 
 
+def accept(blif, n, shared):
+    """(verdict, measurements) for one network: it must be correct on every pattern, have exactly 2^n + shared LUTs,
+    two levels, and fan-in at most six. Any other outcome, including an unreadable netlist, is a failure."""
+    try:
+        luts, levels, fanin, bad = check(blif, n)
+    except (KeyError, ValueError, IndexError) as error:
+        return False, f'netlist does not evaluate: {error!r}'
+    good = bad == 0 and luts == (1 << n) + shared and levels == 2 and fanin <= K
+    return good, f'LUTs {luts:5d}, levels {levels}, max fanin {fanin}, mismatching outputs {bad}'
+
+
 def main():
     ok = True
     for n in (9, 10, 11, 12):
@@ -128,11 +139,9 @@ def main():
         blif, sizes = block_netlist(n)
         candidates.append(('block', sum(1 << b for b in sizes if b >= 2), blif, f'blocks {sizes}'))
         kind, shared, blif, detail = min(candidates, key=lambda c: c[1])
-        luts, levels, fanin, bad = check(blif, n)
-        good = bad == 0 and luts == (1 << n) + shared and levels == 2 and fanin <= K
+        good, measured = accept(blif, n, shared)
         ok &= good
-        print(f'n={n:2d} {kind:5s} ({detail}): shared {shared:3d}, LUTs {luts:5d}, levels {levels}, '
-              f'max fanin {fanin}, mismatching outputs {bad}  {"ok" if good else "FAIL"}', flush=True)
+        print(f'n={n:2d} {kind:5s} ({detail}): shared {shared:3d}, {measured}  {"ok" if good else "FAIL"}', flush=True)
     return 0 if ok else 1
 
 

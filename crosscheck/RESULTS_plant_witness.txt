@@ -1,0 +1,4 @@
+witness network: 129 nodes, simulation mismatches 0
+planted instance: 308696 variables, 24298511 clauses
+solver: SAT in 88.7 s; decoded network mismatches 0
+the direct encoding admits the paper's 7-input construction: yes

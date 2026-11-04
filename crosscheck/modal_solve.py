@@ -41,7 +41,7 @@ def key(K, n, extra, seed):
 
 
 # Cost shape. CaDiCaL is single-threaded: one busy thread is half a physical core, so cpu=0.5 (Modal's unit is the
-# physical core, billed at the higher of request and usage). The local run of this instance peaked at 4.4 GB, so the
+# physical core, billed at the higher of request and usage). The local run of this instance was sampled at up to 4.19 GiB resident, so the
 # memory request is 5 GiB with a hard limit of 12 GiB, and the timeout is Modal's 24-hour maximum. At Modal's list
 # prices ($0.0000131 per core-second, $0.00000222 per GiB-second) the worst case per container, full 24 hours at the
 # 12 GiB limit, is $0.57 CPU + $2.30 memory = $2.87, or $3.43 if a thread were billed as a whole core.
@@ -77,6 +77,14 @@ def solve(K: int, n: int, extra: int, seed: int) -> dict:
     else:
         record['answer'] = 'ERROR'
         record['tail'] = (run.stdout + run.stderr)[-500:]
+    # A decided answer is valid only if any network it produced is a decoder; anything else is not a result.
+    if record['answer'] == 'UNSATISFIABLE' or (record['answer'] == 'SATISFIABLE'
+                                              and record.get('simulation_mismatches') == 0):
+        record['verdict'] = 'valid'
+    elif record['answer'] == 'SATISFIABLE':
+        record['verdict'] = 'invalid network'
+    else:
+        record['verdict'] = 'undecided'
     out.write_text(json.dumps(record, indent=1))
     results.commit()
     return {**record, 'cached': False}
@@ -85,10 +93,15 @@ def solve(K: int, n: int, extra: int, seed: int) -> dict:
 @app.local_entrypoint()
 def main(k: int = 6, n: int = 7, extra: int = 1, seeds: str = '1,2'):
     jobs = [(k, n, extra, int(s)) for s in seeds.split(',')]
+    failed = 0
     for job, result in zip(jobs, solve.starmap(jobs, return_exceptions=True)):
         if isinstance(result, Exception):
             print(json.dumps({'job': job, 'error': repr(result)}))
+            failed += 1
             continue
-        brief = {x: result.get(x) for x in ('K', 'n', 'extra', 'seed', 'answer', 'solve_seconds', 'clauses',
-                                            'simulation_mismatches', 'cached', 'instance_sha256')}
+        brief = {x: result.get(x) for x in ('K', 'n', 'extra', 'seed', 'answer', 'verdict', 'solve_seconds',
+                                            'clauses', 'simulation_mismatches', 'cached', 'instance_sha256')}
         print(json.dumps(brief))
+        failed += result.get('verdict') != 'valid'
+    if failed:
+        raise SystemExit(f'{failed} of {len(jobs)} jobs did not produce a valid decided answer')

@@ -43,8 +43,21 @@ class Writer:
         self.handle.close()
 
 
-def build(path, K, n, extra):
-    """Write the instance to path; return (variables, clauses, meta) with meta for decoding a model."""
+def canonical(fanin, table, K):
+    """The same LUT with its pins in non-decreasing signal order and its table permuted to match."""
+    perm = sorted(range(K), key=lambda p: fanin[p])
+    new_table = 0
+    for t in range(1 << K):
+        old = sum(((t >> p) & 1) << perm[p] for p in range(K))
+        if (table >> old) & 1:
+            new_table |= 1 << t
+    return [fanin[perm[p]] for p in range(K)], new_table
+
+
+def build(path, K, n, extra, plant=None):
+    """Write the instance to path; return (variables, clauses, meta) with meta for decoding a model.
+    plant, a list of (fanin, table) per node, adds unit clauses fixing that network (pins canonicalised), so the
+    instance asks whether the encoding admits it."""
     P = 1 << n
     m = P + extra
     w = Writer(path)
@@ -128,6 +141,17 @@ def build(path, K, n, extra):
                 else:
                     clause(guard + [-own, table[t]])
                     clause(guard + [own, -table[t]])
+    if plant is not None:
+        if len(plant) != m:
+            raise ValueError(f'planted network has {len(plant)} nodes, the instance {m}')
+        for j, (fanin, table) in enumerate(plant):
+            fanin, table = canonical(fanin, table, K)
+            for p, s in enumerate(fanin):
+                if s not in sel[j][p]:
+                    raise ValueError(f'node {j} pin {p} reads signal {s}, which it cannot select')
+                clause([sel[j][p][s]])
+            for t in range(1 << K):
+                clause([tt[j][t] if (table >> t) & 1 else -tt[j][t]])
     w.close()
     return w.nv, w.nc, {'K': K, 'n': n, 'm': m, 'sel': sel, 'tt': tt, 'before': before}
 
@@ -139,7 +163,8 @@ def decode(model, meta):
         fanin = []
         for p in range(K):
             chosen = [s for s, sv in meta['sel'][j][p].items() if model.get(sv)]
-            assert len(chosen) == 1
+            if len(chosen) != 1:
+                raise ValueError(f'model selects {len(chosen)} signals for pin {p} of node {j}')
             fanin.append(chosen[0])
         nodes.append((fanin, sum(1 << t for t in range(1 << K) if model.get(meta['tt'][j][t]))))
 
@@ -150,9 +175,36 @@ def decode(model, meta):
     return nodes, order
 
 
+def topological(nodes, n, K):
+    """A build order computed from the decoded fanins alone, or None when the network is not a circuit: a node with
+    other than K pins, a table wider than 2^K bits, a pin naming a signal that does not exist, or a cycle."""
+    items = nodes.items() if isinstance(nodes, dict) else enumerate(nodes)
+    deps = {}
+    for j, (fanin, table) in items:
+        if len(fanin) != K or not 0 <= table < 1 << (1 << K) or any(s < 0 for s in fanin):
+            return None
+        deps[j] = {s - n - 1 for s in fanin if s > n}
+    if any(d not in deps for ds in deps.values() for d in ds):
+        return None
+    order, done = [], set()
+    while len(order) < len(deps):
+        ready = [j for j in deps if j not in done and deps[j] <= done]
+        if not ready:
+            return None
+        for j in sorted(ready):
+            order.append(j)
+            done.add(j)
+    return order
+
+
 def simulate(nodes, order, K, n):
-    """Independent check: evaluate the decoded network in its build order on every pattern; node i < 2^n must be
-    minterm i. Returns the mismatch count; raises if a node reads one not yet built."""
+    """Independent check: evaluate the decoded network on every pattern; node i < 2^n must be minterm i.
+    The evaluation order is recomputed from the fanins, so the check does not trust the solver's build order.
+    Returns the number of (pattern, output) pairs that differ from the minterm, or 'invalid' when the decoded nodes
+    do not form a circuit (see topological); a caller treats anything but 0 as a failure."""
+    order = topological(nodes, n, K)
+    if order is None or any(i not in (nodes if isinstance(nodes, dict) else range(len(nodes))) for i in range(1 << n)):
+        return 'invalid'
     P = 1 << n
     bad = 0
     for x in range(P):

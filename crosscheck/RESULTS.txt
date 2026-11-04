@@ -1,24 +1,25 @@
 positive controls
-  K=2 n=2 nodes=4: SAT 0.1s (network decoded, mismatches 0)  expected SAT
+  K=2 n=2 nodes=4: SAT 0.0s (network decoded, mismatches 0)  expected SAT
   K=3 n=3 nodes=8: SAT 0.0s (network decoded, mismatches 0)  expected SAT
-  K=4 n=4 nodes=16: SAT 0.1s (network decoded, mismatches 0)  expected SAT
-  K=5 n=5 nodes=32: SAT 8.7s (network decoded, mismatches 0)  expected SAT
+  K=4 n=4 nodes=16: SAT 0.0s (network decoded, mismatches 0)  expected SAT
+  K=5 n=5 nodes=32: SAT 8.2s (network decoded, mismatches 0)  expected SAT
   fully direct K=2 n=3 nodes=12: SAT 0.2s (network decoded, mismatches 0)  expected SAT
-  fully direct K=2 n=3 nodes=8: UNSAT 0.7s  must agree with the role-fixed encoder below
-  fully direct K=2 n=3 nodes=9: UNSAT 4.4s  must agree with the role-fixed encoder below
+  fully direct K=2 n=3 nodes=8: UNSAT 0.7s  expected UNSAT, as the role-fixed encoder below
+  fully direct K=2 n=3 nodes=9: UNSAT 5.0s  expected UNSAT, as the role-fixed encoder below
 
  K  n  LUTs   direct        s  reduced        s  relation
  2  3     8    UNSAT      0.0                    Lemma 2 analogue, expected UNSAT
  2  3     9    UNSAT      0.0    UNSAT      0.0  consistent: both refute
  3  4    16    UNSAT      0.0                    Lemma 2 analogue, expected UNSAT
- 3  4    17    UNSAT      2.5    UNSAT      0.0  consistent: both refute
+ 3  4    17    UNSAT      1.9    UNSAT      0.0  consistent: both refute
  3  5    32    UNSAT      0.3                    Lemma 2 analogue, expected UNSAT
- 3  5    33    UNSAT      5.3    UNSAT      0.0  consistent: both refute
+ 3  5    33    UNSAT      5.9    UNSAT      0.0  consistent: both refute
  4  5    32    UNSAT      0.7                    Lemma 2 analogue, expected UNSAT
- 4  5    33      SAT     26.0      SAT      0.0  consistent: network exists, reduction admits it (network decoded, mismatches 0)
- 4  6    64    UNSAT      6.9                    Lemma 2 analogue, expected UNSAT
- 4  6    65    UNSAT     77.5    UNSAT      0.1  consistent: both refute
- 5  6    64    UNSAT      5.5                    Lemma 2 analogue, expected UNSAT
- 5  6    65      SAT   1634.2      SAT      2.1  consistent: network exists, reduction admits it (network decoded, mismatches 0)
+ 4  5    33      SAT     15.2      SAT      0.0  consistent: network exists, reduction admits it (network decoded, mismatches 0)
+ 4  6    64    UNSAT      4.3                    Lemma 2 analogue, expected UNSAT
+ 4  6    65    UNSAT     64.8    UNSAT      0.0  consistent: both refute
+ 5  6    64    UNSAT      6.4                    Lemma 2 analogue, expected UNSAT
+ 5  6    65      SAT    353.6      SAT      2.1  consistent: network exists, reduction admits it (network decoded, mismatches 0)
 
-violations: 0
+comparisons: 19  held: 19  violations: 0  incomplete: 0
+driver exit 0
