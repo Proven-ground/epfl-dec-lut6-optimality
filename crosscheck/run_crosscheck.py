@@ -52,8 +52,7 @@ def solve(cadical, path, timeout):
 
 def roles(cadical, work, K, n, extra, timeout):
     path = os.path.join(work, f'roles_{K}_{n}_{extra}.cnf')
-    nv, cl, meta = direct_roles.encode(K, n, extra)
-    direct_roles.write(path, nv, cl)
+    nv, nc, meta = direct_roles.build(path, K, n, extra)
     ans, model, sec = solve(cadical, path, timeout)
     note = ''
     if ans == 'SAT':
