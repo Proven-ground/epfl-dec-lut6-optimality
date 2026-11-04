@@ -35,7 +35,12 @@ cd record/generator && python3 decsyn.py ../../dec.aig out.blif && sha256sum out
 writes `out.blif` deterministically (CaDiCaL on a fixed CNF; 6 to 8 minutes) and prints the same hash for both files,
 `428d4987578e1714993052183f9d22af8275b1f39f79f6a17848392a005889f6`. `generate.sh` is the judge's wrapper around the
 same call; its two trailing arguments are the board start netlists, used only when the circuit is not a decoder.
-To recheck the bound, from the repository root:
+To check the witness partition stated in the paper (each of the 256 patterns is isolated by exactly one of the two
+shared LUTs with five raw inputs, Y0 exactly where `count[2] = count[4]`), from the repository root:
+```bash
+python3 partition.py
+```
+prints 128 and 128, both 0, neither 0, and `holds`. To recheck the bound, from the repository root:
 ```bash
 gunzip -k bound_257.cnf.gz bound_257.lrat.gz && cake_lpr bound_257.cnf bound_257.lrat
 ```
