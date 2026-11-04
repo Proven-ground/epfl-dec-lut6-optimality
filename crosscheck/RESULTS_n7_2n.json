@@ -1,0 +1,32 @@
+{
+ "K5_n7_e0": {
+  "K": 5,
+  "n": 7,
+  "extra": 0,
+  "seed": 0,
+  "variables": 249664,
+  "clauses": 19778432,
+  "instance_sha256": "71f841f8577c9384e0c84f12aebd23e1b81c346bd8b78256a0d2e3189b2341b3",
+  "encoder_sha256": "a1677669950f5b681994654dd82626d608f9f23fedd120879e1dba37eaa01977",
+  "cadical_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+  "generate_seconds": 16.0,
+  "solve_seconds": 14.4,
+  "exit": 20,
+  "answer": "UNSATISFIABLE"
+ },
+ "K6_n7_e0": {
+  "K": 6,
+  "n": 7,
+  "extra": 0,
+  "seed": 0,
+  "variables": 304704,
+  "clauses": 23757696,
+  "instance_sha256": "e399bdf8e24eab81a7e7cd482e74889959cf73f7b84a9de224e02fa5f906fae2",
+  "encoder_sha256": "a1677669950f5b681994654dd82626d608f9f23fedd120879e1dba37eaa01977",
+  "cadical_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+  "generate_seconds": 19.8,
+  "solve_seconds": 29.1,
+  "exit": 20,
+  "answer": "UNSATISFIABLE"
+ }
+}

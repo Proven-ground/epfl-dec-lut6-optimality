@@ -45,7 +45,7 @@ Modal with `crosscheck/modal_solve.py` (one container per seed, results cached b
 commit): the direct instance (308,696 variables, 24.3 million clauses) has a 129-node network, found with seed 1 in
 2604 s and simulated with zero mismatches; the reduced instance for that case is the satisfiable 7-input control.
 `crosscheck/RESULTS_6_7.json` holds the run record and the decoded network; every output reads the extra node, which
-reads six inputs only.
+reads six inputs only. The 2^n-LUT direct instances for K = 5, n = 7 and K = 6, n = 7 were also run on Modal and are refuted in 14 s and 29 s, as Lemma 2 predicts; `crosscheck/RESULTS_n7_2n.json` holds both run records.
 
 ## Reproduce
 From a fresh checkout of this repository, on Linux with python3 and CaDiCaL on PATH. The benchmark is fetched from
