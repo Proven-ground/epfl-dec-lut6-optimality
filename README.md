@@ -25,6 +25,20 @@ cake_lpr: `s VERIFIED UNSAT`. Control: `bound_base.py` with BASE = 2 writes the 
 which CaDiCaL answers SATISFIABLE; BASE = 3 writes the bound instance clause for clause. One level is impossible
 because every output depends on all 8 inputs. Every hash, command and answer is in `verdicts.json`.
 
+## Cross-check of the reduction
+`crosscheck/` holds the paper's reduction parametrised by LUT size K and decoder inputs n (`reduced_bound.py`;
+with K = 6 it writes the stored 8-input instance and the 7-input control clause for clause), a direct circuit
+encoding that assumes only that each output is its own node (`direct_roles.py`: free fanins, free tables, free
+build order, every model decoded and simulated), a fully direct encoding with free node roles for the tiniest case
+(`direct_bound.py`), and the driver. From the repository root, with CaDiCaL at CADICAL:
+```bash
+python3 crosscheck/run_crosscheck.py CADICAL
+```
+runs six (K, n) cases with 2^n and 2^n + 1 LUTs and ends with `violations: 0`: the direct encoder refutes 2^n LUTs
+in every case, and for 2^n + 1 the two encoders agree in all six, including K = 4, n = 5 and K = 5, n = 6, where a
+network exists, is found and is admitted by the reduction. `crosscheck/RESULTS.txt` is the recorded run (about
+20 minutes; the largest case is K = 5, n = 6).
+
 ## Reproduce
 From a fresh checkout of this repository, on Linux with python3 and CaDiCaL on PATH. The benchmark is fetched from
 the board at the pinned commit (sha256 `38def606e795975e469273411ee9217bc43656c57e6f6eeda3ea640452fa3443`):
