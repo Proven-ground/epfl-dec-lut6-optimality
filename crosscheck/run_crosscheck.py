@@ -68,11 +68,14 @@ def judge(answer, mismatches, expected):
 
 
 def relate(direct, direct_mismatches, reduced):
-    """Verdict and wording for the 2^n + 1 comparison: direct SAT must imply reduced SAT."""
+    """Verdict and wording for the 2^n + 1 comparison: direct SAT must imply reduced SAT.
+    A decoded network that is not a decoder is a violation whatever the reduced solve did, so it is judged first and
+    an undecided reduced solve is reported beside it, never in its place."""
+    if direct == 'SAT' and direct_mismatches != 0:
+        unfinished = '' if reduced in DECIDED else '; the reduced instance is also undecided within the time limit'
+        return 'violation', 'VIOLATION: the decoded network is not a decoder' + unfinished
     if direct not in DECIDED or reduced not in DECIDED:
         return 'incomplete', 'undecided within the time limit'
-    if direct == 'SAT' and direct_mismatches != 0:
-        return 'violation', 'VIOLATION: the decoded network is not a decoder'
     if direct == 'SAT' and reduced == 'UNSAT':
         return 'violation', 'VIOLATION: the reduction drops a legal network'
     if direct == 'SAT':

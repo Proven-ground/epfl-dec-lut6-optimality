@@ -119,6 +119,21 @@ class Undecided(unittest.TestCase):
         self.assertEqual(run_crosscheck.judge(answer, None, 'UNSAT'), 'incomplete')
         self.assertEqual(run_crosscheck.relate(answer, None, 'UNSAT')[0], 'incomplete')
 
+    def test_a_known_mismatch_is_a_violation_even_when_the_reduced_solve_times_out(self):
+        nodes, order = solved_network(4, 4, 0)
+        nodes[1], nodes[2] = nodes[2], nodes[1]
+        mismatches = direct_roles.simulate(nodes, order, 4, 4)
+        self.assertEqual(mismatches, 4)
+        work = tempfile.mkdtemp(prefix='crosscheck_test_')
+        path = os.path.join(work, 'reduced.cnf')
+        direct_roles.build(path, 4, 6, 1)  # a real instance that takes over a minute
+        reduced, _, _ = run_crosscheck.solve(CADICAL, path, 1.0)
+        self.assertEqual(reduced, 'TIMEOUT')
+        verdict, relation = run_crosscheck.relate('SAT', mismatches, reduced)
+        self.assertEqual(verdict, 'violation')
+        self.assertIn('not a decoder', relation)
+        self.assertIn('undecided', relation)
+
     def test_a_contrary_answer_is_a_violation(self):
         self.assertEqual(run_crosscheck.judge('UNSAT', None, 'SAT'), 'violation')
         self.assertEqual(run_crosscheck.relate('SAT', 0, 'UNSAT')[0], 'violation')
