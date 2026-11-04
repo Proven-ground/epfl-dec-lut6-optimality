@@ -37,7 +37,10 @@ python3 crosscheck/run_crosscheck.py CADICAL
 runs six (K, n) cases with 2^n and 2^n + 1 LUTs and ends with `violations: 0`: the direct encoder refutes 2^n LUTs
 in every case, and for 2^n + 1 the two encoders agree in all six, including K = 4, n = 5 and K = 5, n = 6, where a
 network exists, is found and is admitted by the reduction. `crosscheck/RESULTS.txt` is the recorded run (about
-20 minutes; the largest case is K = 5, n = 6).
+20 minutes; the largest default case is K = 5, n = 6). The case K = 5, n = 7 was run separately
+(`python3 crosscheck/direct_roles.py OUT.cnf 5 7 1` then CaDiCaL: 129 nodes, 20.2 million clauses, UNSATISFIABLE in
+6229 s with a 3.9 GB peak; `python3 crosscheck/reduced_bound.py OUT.cnf 5 7`: UNSATISFIABLE in 1.5 s); the solver
+outputs are in `crosscheck/RESULTS_5_7.txt`. Both encoders refute, consistent.
 
 ## Reproduce
 From a fresh checkout of this repository, on Linux with python3 and CaDiCaL on PATH. The benchmark is fetched from

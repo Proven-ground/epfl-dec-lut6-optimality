@@ -1,0 +1,8 @@
+== direct_roles.py 5 7 1: K=5 n=7 nodes=129: 252968 variables, 20224077 clauses
+Command exited with non-zero status 20
+K=5 n=7 solve 6228.59 s wall, peak 3898260 KB
+exit 20
+s UNSATISFIABLE
+== reduced_bound.py 5 7: 11552 variables, 68257 clauses
+s UNSATISFIABLE
+reduced K=5 n=7 1.46 s
