@@ -40,7 +40,12 @@ network exists, is found and is admitted by the reduction. `crosscheck/RESULTS.t
 20 minutes; the largest default case is K = 5, n = 6). The case K = 5, n = 7 was run separately
 (`python3 crosscheck/direct_roles.py OUT.cnf 5 7 1` then CaDiCaL: 129 nodes, 20.2 million clauses, UNSATISFIABLE in
 6229 s with a 3.9 GB peak; `python3 crosscheck/reduced_bound.py OUT.cnf 5 7`: UNSATISFIABLE in 1.5 s); the solver
-outputs are in `crosscheck/RESULTS_5_7.txt`. Both encoders refute, consistent.
+outputs are in `crosscheck/RESULTS_5_7.txt`. Both encoders refute, consistent. The case K = 6, n = 7 was solved on
+Modal with `crosscheck/modal_solve.py` (one container per seed, results cached by encoder hash, case, seed and solver
+commit): the direct instance (308,696 variables, 24.3 million clauses) has a 129-node network, found with seed 1 in
+2604 s and simulated with zero mismatches; the reduced instance for that case is the satisfiable 7-input control.
+`crosscheck/RESULTS_6_7.json` holds the run record and the decoded network; every output reads the extra node, which
+reads six inputs only.
 
 ## Reproduce
 From a fresh checkout of this repository, on Linux with python3 and CaDiCaL on PATH. The benchmark is fetched from
