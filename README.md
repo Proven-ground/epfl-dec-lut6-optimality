@@ -25,6 +25,14 @@ cake_lpr: `s VERIFIED UNSAT`. Control: `bound_base.py` with BASE = 2 writes the 
 which CaDiCaL answers SATISFIABLE; BASE = 3 writes the bound instance clause for clause. One level is impossible
 because every output depends on all 8 inputs. Every hash, command and answer is in `verdicts.json`.
 
+## Larger decoders
+The paper's conclusion gives two-level upper bounds for the 9- to 12-input decoders. From the repository root:
+```bash
+python3 larger_decoders.py
+```
+builds each network (label construction for 9 and 10 inputs, block construction for 11 and 12) and checks it by
+exhaustive simulation: 521, 1036, 2068 and 4120 LUTs, two levels, fan-in at most six, no mismatching output.
+
 ## Cross-check of the reduction
 `crosscheck/` holds the paper's reduction parametrised by LUT size K and decoder inputs n (`reduced_bound.py`;
 with K = 6 it writes the stored 8-input instance and the 7-input control clause for clause), a direct circuit
