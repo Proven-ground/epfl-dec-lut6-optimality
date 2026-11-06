@@ -1,0 +1,96 @@
+{
+ "K": 5,
+ "n": 7,
+ "luts_lower": 130,
+ "cadical_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+ "cadical_sha256": "a2bbea9fcb7a904a004f4acdce41e64bd8db4bb016b6a231725f59f3ea738e40",
+ "cake_lpr_commit": "a36874a8b750b43fe4b385b8ddbf5b033e46a3fa",
+ "cake_lpr_sha256": "72cd6fc6d93b5be1fd7de746113b033fa88c54e80c46a3d28f4aa6a3ec179c5d",
+ "lower": {
+  "variables": 11552,
+  "clauses": 68257,
+  "cnf_sha256": "6cafe2b39d4ef0494d8ad95a4a09c4e2c39d7bd5e5fa21ef1c738f009328e2b1",
+  "cadical_exit": 20,
+  "cadical_seconds": 0.1,
+  "lrat_bytes": 336457,
+  "lrat_sha256": "5a2e6fcd9f40d4d1a8258020aab36f40b318872c0f097358af8314bb6205df48",
+  "cake_lpr_stdout": "s VERIFIED UNSAT",
+  "cake_lpr_stderr": "",
+  "cake_lpr_seconds": 0.1,
+  "verified": true
+ },
+ "upper": [
+  {
+   "supports": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    [
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   ],
+   "variables": 14464,
+   "clauses": 95490,
+   "cnf_sha256": "b6acc888388766cb5f7c3dc26ba40c3d3ef0b2f72299c0e942dd991d42320925",
+   "cadical_exit": 20,
+   "cadical_seconds": 24.2,
+   "satisfiable": false
+  },
+  {
+   "supports": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    [
+     1,
+     2,
+     3,
+     4,
+     5
+    ]
+   ],
+   "variables": 14464,
+   "clauses": 78850,
+   "cnf_sha256": "072ec6fe7c706c0f38bde09c35cf7cb8b9b21dc96be2d32f8651b0409998fe7b",
+   "cadical_exit": 20,
+   "cadical_seconds": 35.9,
+   "satisfiable": false
+  },
+  {
+   "supports": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ]
+   ],
+   "variables": 14464,
+   "clauses": 67970,
+   "cnf_sha256": "78300a928181152aed0f41486d0fc6494b7248a77cc30b2bacb7dad7f9c88497",
+   "cadical_exit": 20,
+   "cadical_seconds": 12.7,
+   "satisfiable": false
+  }
+ ]
+}

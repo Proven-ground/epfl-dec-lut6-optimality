@@ -1,0 +1,18 @@
+{
+ "cnf": "lean/bound.cnf",
+ "cnf_bytes": 16554664,
+ "cnf_sha256": "6625d4f4cf15251a6d51de4c4f91fd1b4b5e86c61d2f0fad4f50ec7fe5f0b727",
+ "lrat": "lean/bound.lrat",
+ "lrat_bytes": 34409273,
+ "lrat_sha256": "95fc046950c012b073edba638ea04fcdad3206a5eaed51c8fda9154dcc3b2c10",
+ "cadical_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+ "cadical_sha256": "a2bbea9fcb7a904a004f4acdce41e64bd8db4bb016b6a231725f59f3ea738e40",
+ "cake_lpr_commit": "a36874a8b750b43fe4b385b8ddbf5b033e46a3fa",
+ "cake_lpr_sha256": "72cd6fc6d93b5be1fd7de746113b033fa88c54e80c46a3d28f4aa6a3ec179c5d",
+ "command": "cake_lpr --CML_HEAP_SIZE=16000 --CML_STACK_SIZE=4000 bound.cnf bound.lrat",
+ "exit": 0,
+ "stdout": "s VERIFIED UNSAT",
+ "stderr": "",
+ "seconds": 4.0,
+ "verified": true
+}

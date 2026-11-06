@@ -1,0 +1,582 @@
+.model dec
+.inputs i0 i1 i2 i3 i4 i5 i6 i7
+.outputs m0 m1 m2 m3 m4 m5 m6 m7 m8 m9 m10 m11 m12 m13 m14 m15 m16 m17 m18 m19 m20 m21 m22 m23 m24 m25 m26 m27 m28 m29 m30 m31 m32 m33 m34 m35 m36 m37 m38 m39 m40 m41 m42 m43 m44 m45 m46 m47 m48 m49 m50 m51 m52 m53 m54 m55 m56 m57 m58 m59 m60 m61 m62 m63 m64 m65 m66 m67 m68 m69 m70 m71 m72 m73 m74 m75 m76 m77 m78 m79 m80 m81 m82 m83 m84 m85 m86 m87 m88 m89 m90 m91 m92 m93 m94 m95 m96 m97 m98 m99 m100 m101 m102 m103 m104 m105 m106 m107 m108 m109 m110 m111 m112 m113 m114 m115 m116 m117 m118 m119 m120 m121 m122 m123 m124 m125 m126 m127 m128 m129 m130 m131 m132 m133 m134 m135 m136 m137 m138 m139 m140 m141 m142 m143 m144 m145 m146 m147 m148 m149 m150 m151 m152 m153 m154 m155 m156 m157 m158 m159 m160 m161 m162 m163 m164 m165 m166 m167 m168 m169 m170 m171 m172 m173 m174 m175 m176 m177 m178 m179 m180 m181 m182 m183 m184 m185 m186 m187 m188 m189 m190 m191 m192 m193 m194 m195 m196 m197 m198 m199 m200 m201 m202 m203 m204 m205 m206 m207 m208 m209 m210 m211 m212 m213 m214 m215 m216 m217 m218 m219 m220 m221 m222 m223 m224 m225 m226 m227 m228 m229 m230 m231 m232 m233 m234 m235 m236 m237 m238 m239 m240 m241 m242 m243 m244 m245 m246 m247 m248 m249 m250 m251 m252 m253 m254 m255
+.names i0 i1 i2 i3 i4 i5 y0
+100000 1
+100100 1
+010100 1
+110100 1
+000010 1
+100010 1
+010010 1
+110010 1
+101010 1
+111010 1
+000110 1
+100110 1
+010110 1
+110110 1
+001110 1
+101110 1
+000001 1
+100001 1
+010001 1
+010101 1
+000011 1
+100011 1
+010011 1
+110011 1
+011011 1
+111011 1
+000111 1
+100111 1
+010111 1
+110111 1
+001111 1
+011111 1
+.names i2 i3 i4 i5 i6 i7 y1
+100000 1
+110000 1
+101000 1
+111000 1
+100100 1
+101100 1
+011100 1
+111100 1
+110010 1
+001010 1
+101010 1
+011010 1
+111010 1
+101110 1
+011110 1
+111110 1
+001001 1
+101001 1
+111001 1
+100101 1
+001101 1
+101101 1
+011101 1
+111101 1
+110011 1
+001011 1
+101011 1
+111011 1
+100111 1
+110111 1
+101111 1
+111111 1
+.names i1 i2 i3 i6 i7 y0 m0
+000000 1
+.names i3 i4 i5 i6 i7 y0 m1
+000001 1
+.names i0 i1 i2 i6 i7 y0 m2
+010000 1
+.names i0 i2 i5 i6 i7 y0 m3
+100000 1
+.names i0 i1 i3 i4 i5 y1 m4
+000001 1
+.names i0 i1 i3 i4 i5 y1 m5
+100001 1
+.names i0 i1 i3 i4 i5 y1 m6
+010001 1
+.names i0 i1 i3 i4 i5 y1 m7
+110001 1
+.names i2 i3 i5 i6 i7 y0 m8
+010000 1
+.names i1 i3 i4 i6 i7 y0 m9
+010001 1
+.names i0 i4 i5 i6 i7 y0 m10
+000001 1
+.names i0 i1 i4 i6 i7 y0 m11
+110001 1
+.names i0 i1 i3 i4 i6 y1 m12
+001001 1
+.names i0 i1 i3 i4 i6 y1 m13
+101001 1
+.names i0 i1 i3 i4 i6 y1 m14
+011001 1
+.names i0 i1 i3 i4 i6 y1 m15
+111001 1
+.names i0 i1 i3 i4 i5 y1 m16
+000100 1
+.names i0 i1 i3 i4 i5 y1 m17
+100100 1
+.names i0 i1 i3 i4 i5 y1 m18
+010100 1
+.names i0 i1 i3 i4 i5 y1 m19
+110100 1
+.names i1 i4 i5 i6 i7 y0 m20
+010000 1
+.names i1 i2 i3 i6 i7 y0 m21
+010001 1
+.names i1 i3 i4 i6 i7 y0 m22
+101000 1
+.names i1 i2 i5 i6 i7 y0 m23
+110001 1
+.names i0 i1 i3 i4 i7 y1 m24
+001100 1
+.names i0 i1 i3 i4 i7 y1 m25
+101100 1
+.names i0 i1 i3 i4 i7 y1 m26
+011100 1
+.names i0 i1 i3 i4 i7 y1 m27
+111100 1
+.names i0 i2 i5 i6 i7 y0 m28
+010001 1
+.names i0 i2 i3 i6 i7 y0 m29
+111001 1
+.names i0 i3 i4 i6 i7 y0 m30
+011000 1
+.names i0 i4 i5 i6 i7 y0 m31
+110000 1
+.names i0 i1 i4 i6 i7 y0 m32
+000001 1
+.names i0 i4 i5 i6 i7 y0 m33
+101001 1
+.names i1 i3 i4 i6 i7 y0 m34
+100001 1
+.names i2 i3 i5 i6 i7 y0 m35
+001000 1
+.names i0 i1 i4 i5 i7 y1 m36
+000101 1
+.names i0 i1 i4 i5 i7 y1 m37
+100101 1
+.names i0 i1 i4 i5 i7 y1 m38
+010101 1
+.names i0 i1 i4 i5 i7 y1 m39
+110101 1
+.names i0 i2 i5 i6 i7 y0 m40
+001000 1
+.names i0 i1 i2 i6 i7 y0 m41
+100000 1
+.names i3 i4 i5 i6 i7 y0 m42
+101001 1
+.names i1 i2 i3 i6 i7 y0 m43
+101000 1
+.names i0 i1 i2 i6 i7 y1 m44
+001000 1
+.names i0 i1 i2 i6 i7 y1 m45
+101000 1
+.names i0 i1 i2 i6 i7 y1 m46
+011000 1
+.names i0 i1 i2 i6 i7 y1 m47
+111000 1
+.names i0 i1 i4 i5 i6 y1 m48
+001100 1
+.names i0 i1 i4 i5 i6 y1 m49
+101100 1
+.names i0 i1 i4 i5 i6 y1 m50
+011100 1
+.names i0 i1 i4 i5 i6 y1 m51
+111100 1
+.names i0 i4 i5 i6 i7 y0 m52
+011000 1
+.names i0 i3 i4 i6 i7 y0 m53
+101000 1
+.names i0 i2 i3 i6 i7 y0 m54
+010001 1
+.names i0 i2 i5 i6 i7 y0 m55
+111001 1
+.names i0 i1 i2 i6 i7 y1 m56
+000001 1
+.names i0 i1 i2 i6 i7 y1 m57
+100001 1
+.names i0 i1 i2 i6 i7 y1 m58
+010001 1
+.names i0 i1 i2 i6 i7 y1 m59
+110001 1
+.names i1 i2 i5 i6 i7 y0 m60
+011001 1
+.names i1 i3 i4 i6 i7 y0 m61
+011000 1
+.names i1 i2 i3 i6 i7 y0 m62
+111001 1
+.names i1 i4 i5 i6 i7 y0 m63
+111000 1
+.names i1 i2 i3 i6 i7 y0 m64
+000100 1
+.names i3 i4 i5 i6 i7 y0 m65
+000101 1
+.names i0 i1 i2 i6 i7 y0 m66
+010100 1
+.names i0 i2 i5 i6 i7 y0 m67
+100100 1
+.names i0 i1 i2 i5 i7 y1 m68
+001000 1
+.names i0 i1 i2 i5 i7 y1 m69
+101000 1
+.names i0 i1 i2 i5 i7 y1 m70
+011000 1
+.names i0 i1 i2 i5 i7 y1 m71
+111000 1
+.names i2 i3 i5 i6 i7 y0 m72
+010100 1
+.names i1 i3 i4 i6 i7 y0 m73
+010101 1
+.names i0 i4 i5 i6 i7 y0 m74
+000101 1
+.names i0 i1 i4 i6 i7 y0 m75
+110101 1
+.names i0 i1 i4 i6 i7 y1 m76
+000101 1
+.names i0 i1 i4 i6 i7 y1 m77
+100101 1
+.names i0 i1 i4 i6 i7 y1 m78
+010101 1
+.names i0 i1 i4 i6 i7 y1 m79
+110101 1
+.names i0 i1 i2 i3 i7 y1 m80
+000001 1
+.names i0 i1 i2 i3 i7 y1 m81
+100001 1
+.names i0 i1 i2 i3 i7 y1 m82
+010001 1
+.names i0 i1 i2 i3 i7 y1 m83
+110001 1
+.names i1 i4 i5 i6 i7 y0 m84
+010100 1
+.names i1 i2 i3 i6 i7 y0 m85
+010101 1
+.names i1 i3 i4 i6 i7 y0 m86
+101100 1
+.names i1 i2 i5 i6 i7 y0 m87
+110101 1
+.names i0 i1 i2 i3 i5 y1 m88
+000101 1
+.names i0 i1 i2 i3 i5 y1 m89
+100101 1
+.names i0 i1 i2 i3 i5 y1 m90
+010101 1
+.names i0 i1 i2 i3 i5 y1 m91
+110101 1
+.names i0 i2 i5 i6 i7 y0 m92
+010101 1
+.names i0 i2 i3 i6 i7 y0 m93
+111101 1
+.names i0 i3 i4 i6 i7 y0 m94
+011100 1
+.names i0 i4 i5 i6 i7 y0 m95
+110100 1
+.names i0 i1 i4 i6 i7 y0 m96
+000101 1
+.names i0 i4 i5 i6 i7 y0 m97
+101101 1
+.names i1 i3 i4 i6 i7 y0 m98
+100101 1
+.names i2 i3 i5 i6 i7 y0 m99
+001100 1
+.names i0 i1 i2 i3 i5 y1 m100
+001010 1
+.names i0 i1 i2 i3 i5 y1 m101
+101010 1
+.names i0 i1 i2 i3 i5 y1 m102
+011010 1
+.names i0 i1 i2 i3 i5 y1 m103
+111010 1
+.names i0 i2 i5 i6 i7 y0 m104
+001100 1
+.names i0 i1 i2 i6 i7 y0 m105
+100100 1
+.names i3 i4 i5 i6 i7 y0 m106
+101101 1
+.names i1 i2 i3 i6 i7 y0 m107
+101100 1
+.names i0 i1 i2 i3 i6 y1 m108
+001110 1
+.names i0 i1 i2 i3 i6 y1 m109
+101110 1
+.names i0 i1 i2 i3 i6 y1 m110
+011110 1
+.names i0 i1 i2 i3 i6 y1 m111
+111110 1
+.names i0 i1 i4 i6 i7 y1 m112
+001100 1
+.names i0 i1 i4 i6 i7 y1 m113
+101100 1
+.names i0 i1 i4 i6 i7 y1 m114
+011100 1
+.names i0 i1 i4 i6 i7 y1 m115
+111100 1
+.names i0 i4 i5 i6 i7 y0 m116
+011100 1
+.names i0 i3 i4 i6 i7 y0 m117
+101100 1
+.names i0 i2 i3 i6 i7 y0 m118
+010101 1
+.names i0 i2 i5 i6 i7 y0 m119
+111101 1
+.names i0 i1 i2 i5 i6 y1 m120
+000111 1
+.names i0 i1 i2 i5 i6 y1 m121
+100111 1
+.names i0 i1 i2 i5 i6 y1 m122
+010111 1
+.names i0 i1 i2 i5 i6 y1 m123
+110111 1
+.names i1 i2 i5 i6 i7 y0 m124
+011101 1
+.names i1 i3 i4 i6 i7 y0 m125
+011100 1
+.names i1 i2 i3 i6 i7 y0 m126
+111101 1
+.names i1 i4 i5 i6 i7 y0 m127
+111100 1
+.names i1 i2 i3 i6 i7 y0 m128
+000010 1
+.names i3 i4 i5 i6 i7 y0 m129
+000011 1
+.names i0 i1 i2 i6 i7 y0 m130
+010010 1
+.names i0 i2 i5 i6 i7 y0 m131
+100010 1
+.names i0 i1 i2 i3 i6 y1 m132
+001000 1
+.names i0 i1 i2 i3 i6 y1 m133
+101000 1
+.names i0 i1 i2 i3 i6 y1 m134
+011000 1
+.names i0 i1 i2 i3 i6 y1 m135
+111000 1
+.names i2 i3 i5 i6 i7 y0 m136
+010010 1
+.names i1 i3 i4 i6 i7 y0 m137
+010011 1
+.names i0 i4 i5 i6 i7 y0 m138
+000011 1
+.names i0 i1 i4 i6 i7 y0 m139
+110011 1
+.names i0 i1 i2 i3 i5 y1 m140
+001100 1
+.names i0 i1 i2 i3 i5 y1 m141
+101100 1
+.names i0 i1 i2 i3 i5 y1 m142
+011100 1
+.names i0 i1 i2 i3 i5 y1 m143
+111100 1
+.names i0 i1 i2 i5 i6 y1 m144
+000001 1
+.names i0 i1 i2 i5 i6 y1 m145
+100001 1
+.names i0 i1 i2 i5 i6 y1 m146
+010001 1
+.names i0 i1 i2 i5 i6 y1 m147
+110001 1
+.names i1 i4 i5 i6 i7 y0 m148
+010010 1
+.names i1 i2 i3 i6 i7 y0 m149
+010011 1
+.names i1 i3 i4 i6 i7 y0 m150
+101010 1
+.names i1 i2 i5 i6 i7 y0 m151
+110011 1
+.names i0 i1 i4 i6 i7 y1 m152
+001010 1
+.names i0 i1 i4 i6 i7 y1 m153
+101010 1
+.names i0 i1 i4 i6 i7 y1 m154
+011010 1
+.names i0 i1 i4 i6 i7 y1 m155
+111010 1
+.names i0 i2 i5 i6 i7 y0 m156
+010011 1
+.names i0 i2 i3 i6 i7 y0 m157
+111011 1
+.names i0 i3 i4 i6 i7 y0 m158
+011010 1
+.names i0 i4 i5 i6 i7 y0 m159
+110010 1
+.names i0 i1 i4 i6 i7 y0 m160
+000011 1
+.names i0 i4 i5 i6 i7 y0 m161
+101011 1
+.names i1 i3 i4 i6 i7 y0 m162
+100011 1
+.names i2 i3 i5 i6 i7 y0 m163
+001010 1
+.names i0 i1 i4 i6 i7 y1 m164
+000011 1
+.names i0 i1 i4 i6 i7 y1 m165
+100011 1
+.names i0 i1 i4 i6 i7 y1 m166
+010011 1
+.names i0 i1 i4 i6 i7 y1 m167
+110011 1
+.names i0 i2 i5 i6 i7 y0 m168
+001010 1
+.names i0 i1 i2 i6 i7 y0 m169
+100010 1
+.names i3 i4 i5 i6 i7 y0 m170
+101011 1
+.names i1 i2 i3 i6 i7 y0 m171
+101010 1
+.names i0 i1 i2 i5 i7 y1 m172
+001110 1
+.names i0 i1 i2 i5 i7 y1 m173
+101110 1
+.names i0 i1 i2 i5 i7 y1 m174
+011110 1
+.names i0 i1 i2 i5 i7 y1 m175
+111110 1
+.names i0 i1 i2 i3 i5 y1 m176
+000011 1
+.names i0 i1 i2 i3 i5 y1 m177
+100011 1
+.names i0 i1 i2 i3 i5 y1 m178
+010011 1
+.names i0 i1 i2 i3 i5 y1 m179
+110011 1
+.names i0 i4 i5 i6 i7 y0 m180
+011010 1
+.names i0 i3 i4 i6 i7 y0 m181
+101010 1
+.names i0 i2 i3 i6 i7 y0 m182
+010011 1
+.names i0 i2 i5 i6 i7 y0 m183
+111011 1
+.names i0 i1 i2 i3 i7 y1 m184
+000111 1
+.names i0 i1 i2 i3 i7 y1 m185
+100111 1
+.names i0 i1 i2 i3 i7 y1 m186
+010111 1
+.names i0 i1 i2 i3 i7 y1 m187
+110111 1
+.names i1 i2 i5 i6 i7 y0 m188
+011011 1
+.names i1 i3 i4 i6 i7 y0 m189
+011010 1
+.names i1 i2 i3 i6 i7 y0 m190
+111011 1
+.names i1 i4 i5 i6 i7 y0 m191
+111010 1
+.names i1 i2 i3 i6 i7 y0 m192
+000110 1
+.names i3 i4 i5 i6 i7 y0 m193
+000111 1
+.names i0 i1 i2 i6 i7 y0 m194
+010110 1
+.names i0 i2 i5 i6 i7 y0 m195
+100110 1
+.names i0 i1 i2 i6 i7 y1 m196
+001110 1
+.names i0 i1 i2 i6 i7 y1 m197
+101110 1
+.names i0 i1 i2 i6 i7 y1 m198
+011110 1
+.names i0 i1 i2 i6 i7 y1 m199
+111110 1
+.names i2 i3 i5 i6 i7 y0 m200
+010110 1
+.names i1 i3 i4 i6 i7 y0 m201
+010111 1
+.names i0 i4 i5 i6 i7 y0 m202
+000111 1
+.names i0 i1 i4 i6 i7 y0 m203
+110111 1
+.names i0 i1 i4 i5 i7 y1 m204
+000011 1
+.names i0 i1 i4 i5 i7 y1 m205
+100011 1
+.names i0 i1 i4 i5 i7 y1 m206
+010011 1
+.names i0 i1 i4 i5 i7 y1 m207
+110011 1
+.names i0 i1 i2 i6 i7 y1 m208
+000111 1
+.names i0 i1 i2 i6 i7 y1 m209
+100111 1
+.names i0 i1 i2 i6 i7 y1 m210
+010111 1
+.names i0 i1 i2 i6 i7 y1 m211
+110111 1
+.names i1 i4 i5 i6 i7 y0 m212
+010110 1
+.names i1 i2 i3 i6 i7 y0 m213
+010111 1
+.names i1 i3 i4 i6 i7 y0 m214
+101110 1
+.names i1 i2 i5 i6 i7 y0 m215
+110111 1
+.names i0 i1 i4 i5 i6 y1 m216
+001010 1
+.names i0 i1 i4 i5 i6 y1 m217
+101010 1
+.names i0 i1 i4 i5 i6 y1 m218
+011010 1
+.names i0 i1 i4 i5 i6 y1 m219
+111010 1
+.names i0 i2 i5 i6 i7 y0 m220
+010111 1
+.names i0 i2 i3 i6 i7 y0 m221
+111111 1
+.names i0 i3 i4 i6 i7 y0 m222
+011110 1
+.names i0 i4 i5 i6 i7 y0 m223
+110110 1
+.names i0 i1 i4 i6 i7 y0 m224
+000111 1
+.names i0 i4 i5 i6 i7 y0 m225
+101111 1
+.names i1 i3 i4 i6 i7 y0 m226
+100111 1
+.names i2 i3 i5 i6 i7 y0 m227
+001110 1
+.names i0 i1 i3 i4 i6 y1 m228
+000011 1
+.names i0 i1 i3 i4 i6 y1 m229
+100011 1
+.names i0 i1 i3 i4 i6 y1 m230
+010011 1
+.names i0 i1 i3 i4 i6 y1 m231
+110011 1
+.names i0 i2 i5 i6 i7 y0 m232
+001110 1
+.names i0 i1 i2 i6 i7 y0 m233
+100110 1
+.names i3 i4 i5 i6 i7 y0 m234
+101111 1
+.names i1 i2 i3 i6 i7 y0 m235
+101110 1
+.names i0 i1 i3 i4 i5 y1 m236
+001011 1
+.names i0 i1 i3 i4 i5 y1 m237
+101011 1
+.names i0 i1 i3 i4 i5 y1 m238
+011011 1
+.names i0 i1 i3 i4 i5 y1 m239
+111011 1
+.names i0 i1 i3 i4 i7 y1 m240
+000110 1
+.names i0 i1 i3 i4 i7 y1 m241
+100110 1
+.names i0 i1 i3 i4 i7 y1 m242
+010110 1
+.names i0 i1 i3 i4 i7 y1 m243
+110110 1
+.names i0 i4 i5 i6 i7 y0 m244
+011110 1
+.names i0 i3 i4 i6 i7 y0 m245
+101110 1
+.names i0 i2 i3 i6 i7 y0 m246
+010111 1
+.names i0 i2 i5 i6 i7 y0 m247
+111111 1
+.names i0 i1 i3 i4 i5 y1 m248
+001110 1
+.names i0 i1 i3 i4 i5 y1 m249
+101110 1
+.names i0 i1 i3 i4 i5 y1 m250
+011110 1
+.names i0 i1 i3 i4 i5 y1 m251
+111110 1
+.names i1 i2 i5 i6 i7 y0 m252
+011111 1
+.names i1 i3 i4 i6 i7 y0 m253
+011110 1
+.names i1 i2 i3 i6 i7 y0 m254
+111111 1
+.names i1 i4 i5 i6 i7 y0 m255
+111110 1
+.end

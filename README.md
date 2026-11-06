@@ -26,6 +26,56 @@ which CaDiCaL answers SATISFIABLE; BASE = 3 writes the bound instance clause for
 because every output depends on all 8 inputs. The hashes, commands and answers of the main result are in
 `verdicts.json`.
 
+## Machine-checked proof of the bound
+`lean/` is a Lean 4 development (toolchain `leanprover/lean4:v4.35.0`, Mathlib commit `56a00585`) that proves the
+lower bound from the circuit model to the refutation:
+```lean
+theorem DecoderOptimality.lowerBound (net : Network 8 6) (hdec : net.computesDecoder) : 258 ≤ net.nodes.size
+```
+A `Network 8 6` is any acyclic array of six-pin LUTs over eight inputs, each pin reading an input, an earlier node or a
+constant through an optional inverter, with an arbitrary table per node; `computesDecoder` says every minterm equals
+some node's function up to an output inverter; asking for a node loses nothing, since a minterm is true on exactly
+one of the 256 patterns while a constant is true on none or all of them and an input, direct or inverted, on 128. The three lemmas of the paper are theorems of the development; a
+second encoder, written in Lean and sharing no code with `bound.py`, produces the formula `lean/bound.cnf.gz`
+(939,074 clauses), and the theorem that every network of at most 257 nodes satisfies it; CaDiCaL's LRAT refutation
+`lean/bound.lrat.gz` is checked by Lean's own verified LRAT checker inside the proof. `#print axioms` lists `propext`,
+`Classical.choice`, `Quot.sound` and the one axiom `native_decide` introduces for that check; no `sorry`. With `elan`
+installed, from `lean/`:
+```bash
+gunzip -k bound.lrat.gz && lake exe cache get && lake build DecoderOptimality.Main
+```
+The build ends with the axiom line; it requires an LRAT refutation of `Bound.cnf` accepted by Lean's checker. `lean/README.md` lists every module, the
+hashes of the sources, the formula and the certificate, and the recorded run. The same file also proves, from
+Lemmas 1 and 2 alone and under the three standard axioms, `lowerBound_general`: every decoder network over `n > K ≥ 1`
+inputs has at least `2 ^ n + 1` nodes, and its instance `lowerBound7`: 129 LUT-6 nodes for the 7-input decoder.
+cake_lpr accepts the Lean-written formula's refutation too (`cake_lpr bound.cnf bound.lrat`, `s VERIFIED UNSAT`,
+4.0 s, `lean/bound.cake_lpr.json`).
+
+## The family n = K + 2
+For K = 3, 4, 5 and n = K + 2 the reduction's instance (`crosscheck/reduced_bound.py K n`) is refuted by CaDiCaL with an
+LRAT proof that cake_lpr accepts, so 2^n + 1 LUT-K nodes are impossible for the (K+2)-input decoder, as for K = 6.
+The two-shared-LUT construction of the 258-LUT netlist does not transfer: the isolation instance with two shared
+LUT-K nodes (`family/family.py K n`), one formula per overlap of the two supports, is unsatisfiable in every case,
+while the same encoder finds the one- and two-shared-LUT networks at K = 6 for 7 and 8 inputs (`family/K6_n7.*`,
+`family/K6_n8.*`, the positive controls: n = 7 in 0.0 s, n = 8 in 58.1 s). The exact count at
+K = 3, 4, 5 is therefore open above 2^n + 1; at K = 6 it is 2^n + 2 = 258.
+
+| K | n | reduced instance | CaDiCaL | cake_lpr | two shared LUTs (overlaps) |
+|---|---|---|---|---|---|
+| 3 | 5 | 128 variables, 737 clauses | UNSAT, 0.0 s | `s VERIFIED UNSAT`, 0.0 s | unsatisfiable for overlaps 1, 2, 3, at most 0.0 s |
+| 4 | 6 | 1264 variables, 7745 clauses | UNSAT, 0.0 s | `s VERIFIED UNSAT`, 0.0 s | unsatisfiable for overlaps 2, 3, 4, at most 0.0 s |
+| 5 | 7 | 11552 variables, 68257 clauses | UNSAT, 0.1 s | `s VERIFIED UNSAT`, 0.1 s | unsatisfiable for overlaps 3, 4, 5, at most 35.9 s |
+
+`family/K<K>_n<n>.json` holds every hash, size, time and answer; `family/reduced_K<K>_n<n>.cnf.gz` and `.lrat.gz` are
+the certified refutations; `family/modal_family.py` ran the three cases, the controls and the cake_lpr check of the Lean
+formula. To rerun one case, from this folder:
+```bash
+python3 crosscheck/reduced_bound.py reduced.cnf 5 7 && cadical -q --lrat --binary=false reduced.cnf reduced.lrat; cake_lpr reduced.cnf reduced.lrat
+python3 family/family.py 5 7 iso && for f in iso_*.cnf; do cadical -q $f; done
+```
+The first line prints `s VERIFIED UNSAT`; every `cadical` of the second exits with status 20.
+
+
 ## Reproduce the main result
 From a fresh checkout of this repository, on Linux with python3, ABC, cake_lpr and CaDiCaL on PATH. The benchmark is
 fetched from the board at the pinned commit (sha256 `38def606e795975e469273411ee9217bc43656c57e6f6eeda3ea640452fa3443`):

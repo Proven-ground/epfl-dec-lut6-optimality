@@ -1,0 +1,113 @@
+{
+ "K": 6,
+ "n": 8,
+ "luts_lower": 258,
+ "cadical_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+ "cadical_sha256": "a2bbea9fcb7a904a004f4acdce41e64bd8db4bb016b6a231725f59f3ea738e40",
+ "cake_lpr_commit": "a36874a8b750b43fe4b385b8ddbf5b033e46a3fa",
+ "cake_lpr_sha256": "72cd6fc6d93b5be1fd7de746113b033fa88c54e80c46a3d28f4aa6a3ec179c5d",
+ "upper": [
+  {
+   "supports": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "variables": 50304,
+   "clauses": 372482,
+   "cnf_sha256": "689e78d4b5f0d0f785bd05baf1ecae7617d2dac5766014bae4d46c139d71fdde",
+   "cadical_exit": 10,
+   "cadical_seconds": 58.1,
+   "satisfiable": true,
+   "tables": [
+    "0x5fcf04073faf0e02",
+    "0xaab8f2b0e0f8e2aa"
+   ],
+   "simulation_mismatches": 0,
+   "luts": 258,
+   "levels": 2,
+   "valid": true
+  },
+  {
+   "supports": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   ],
+   "variables": 50304,
+   "clauses": 312322,
+   "cnf_sha256": "a5859ed68e98a731b897981b0811b0d8fea2d620e36ccb041fd561289fb73d49",
+   "cadical_exit": 10,
+   "cadical_seconds": 27.3,
+   "satisfiable": true,
+   "tables": [
+    "0xc4df04dc80ce8cfe",
+    "0xfae0b2a2a8e8b0fa"
+   ],
+   "simulation_mismatches": 0,
+   "luts": 258,
+   "levels": 2,
+   "valid": true
+  },
+  {
+   "supports": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ]
+   ],
+   "variables": 50304,
+   "clauses": 269058,
+   "cnf_sha256": "333b221007f854bd4cbba09476ff8d9ee60d4da1ccec72177fec2b4b8c822800",
+   "cadical_exit": 10,
+   "cadical_seconds": 279.8,
+   "satisfiable": true,
+   "tables": [
+    "0x8e085ffefee880e8",
+    "0x71e177f7ff61170"
+   ],
+   "simulation_mismatches": 0,
+   "luts": 258,
+   "levels": 2,
+   "valid": true
+  }
+ ]
+}
