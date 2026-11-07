@@ -5,35 +5,40 @@
       "K": 3,
       "n": 5,
       "luts": 36,
-      "depth": 3
+      "depth": 3,
+      "unread_constant_removed_from_sha256": "e35d93829025f8c714de942916702e660e524809870a93bbbe591ebeaf14070e"
     },
     {
       "path": "netlists/K4_minimum.blif",
       "K": 4,
       "n": 6,
       "luts": 67,
-      "depth": 2
+      "depth": 2,
+      "unread_constant_removed_from_sha256": "ddc8e368bee9152d0c7073ce8ce143dcfb0542d36650081b6cb87741b69da65d"
     },
     {
       "path": "netlists/K5_minimum.blif",
       "K": 5,
       "n": 7,
       "luts": 130,
-      "depth": 3
+      "depth": 3,
+      "unread_constant_removed_from_sha256": "ee26d3e08b9263074862f98a2901527e5ec40a6d763af89351975cda2ac5aece"
     },
     {
       "path": "netlists/K3_depth2.blif",
       "K": 3,
       "n": 5,
       "luts": 37,
-      "depth": 2
+      "depth": 2,
+      "unread_constant_removed_from_sha256": "be29abcc4b488f6217a4b1c7d683d9e442a9af9ac0d8b803650b9f31a83afe81"
     },
     {
       "path": "netlists/K5_depth2.blif",
       "K": 5,
       "n": 7,
       "luts": 131,
-      "depth": 2
+      "depth": 2,
+      "unread_constant_removed_from_sha256": "96a86b2ab512c0ac5e3d57e5f49ab0d1b18e9687f87ba47215a4d7dae1837226"
     }
   ],
   "certificates": [

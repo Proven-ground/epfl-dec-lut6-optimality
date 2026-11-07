@@ -161,8 +161,8 @@ python3 crosscheck/plant_witness.py CADICAL WORKDIR
 
 ## Exact family counts for K = 3, 4, 5
 
-The family supplement `decoder-family-supplement.zip` (173,619,283 bytes, SHA-256
-`134d09dabe87bf005e04e2420e7af92a2ed0ec9e942fed0791156258a3218f58`) is attached to this repository's release; its
+The family supplement `decoder-family-supplement.zip` (173,619,481 bytes, SHA-256
+`f1487ad8b25ab08bb65bc0c556ca6767b213f7c6b8e2385d51c4fe2703b57145`) is attached to this repository's release; its
 files other than the compressed formulas and refutations are in `family_closure/`.
 The (K+2)-input decoder minima are 36, 67 and 130 LUT-K nodes, attained at depths 3, 2 and 3.
 At depth two the exact counts are 37, 67 and 131. All five netlists pass exhaustive replay;
