@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "exit": 0,
+  "command": [
+    "/root/.elan/bin/lean",
+    "-o",
+    "/results/lean_family_f1ea3f55cac7120a/GenericLift.olean",
+    "/results/lean_family_f1ea3f55cac7120a/GenericLift.lean"
+  ],
+  "source_sha256": "f1ea3f55cac7120a003cd6e245f6237231948f013081d7ad351591558cdfc77f",
+  "seconds": 21.53,
+  "stdout": "DecoderOptimality.Family.digit_le (b : Bool) : digit b \u2264 1\n'DecoderOptimality.Family.liftReduced' depends on axioms: [propext, Classical.choice, Quot.sound]\n'DecoderOptimality.Family.lowerBoundK5' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n DecoderOptimality.Certificate.cert_ok._native.native_decide.ax_1_1]\n'DecoderOptimality.Family.lowerBoundK4' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n DecoderOptimality.Certificate.cert_ok._native.native_decide.ax_1_1]\n'DecoderOptimality.Family.lowerBoundK3' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n DecoderOptimality.Certificate.cert_ok._native.native_decide.ax_1_1]\n",
+  "original_module_bytes": {
+    "Model": 516776,
+    "Reduced": 213232,
+    "Main": 50512,
+    "Certificate": 34420704
+  },
+  "original_modules": {
+    "Model": "9a4dc8430e90299badf50bb282b3d5ce65956bf8ab90f67f6892ff367acd3c49",
+    "Reduced": "66dc9e3d48fe9d2a645f50833eb57968ef5767e00a02ae7ab6ae1df352dc0604",
+    "Structure": "06205a7c5c063b9eb53037dfd7c02fb5713eaf03af326faea65dec7bb1972211",
+    "Dominance": "1f6aa178d0c3cf6f4c2e7cfec3ca40cf1077c9fa609585d5f0e716c615ebdd86",
+    "Bridge": "87df36c9ab71153013c1cce7a7b59a73a0cdef8870a98b596e8852d63f3641ea",
+    "Certificate": "3995242865188f4a94210a9823075051389e12a1948a8f74f9d85f7c594b065e",
+    "Main": "6e0381413bc8a288490a35d66cad310062dfa4092c4c3a5672b3397587e5d892"
+  }
+}

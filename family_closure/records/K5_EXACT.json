@@ -1,0 +1,22 @@
+{
+  "K": 5,
+  "n": 7,
+  "exact_minimum": 130,
+  "levels": 3,
+  "independent_simulation_mismatches": 0,
+  "corrupted_output_mismatches": 4,
+  "counted_luts": 130,
+  "network_sha256": "ee26d3e08b9263074862f98a2901527e5ec40a6d763af89351975cda2ac5aece",
+  "lower_cnf_sha256": "6cafe2b39d4ef0494d8ad95a4a09c4e2c39d7bd5e5fa21ef1c738f009328e2b1",
+  "lower_lrat_sha256": "5a2e6fcd9f40d4d1a8258020aab36f40b318872c0f097358af8314bb6205df48",
+  "cake_lpr_verdict": "s VERIFIED UNSAT",
+  "cake_command": [
+    "/opt/cake_lpr/cake_lpr",
+    "/results/K5_exact_pair/lower129.cnf",
+    "/results/K5_exact_pair/lower129.lrat"
+  ],
+  "cake_binary_sha256": "72cd6fc6d93b5be1fd7de746113b033fa88c54e80c46a3d28f4aa6a3ec179c5d",
+  "independent_checker_sha256": "a97330335a74f36d9a14ef7f42fd5fea427dd7fe7052eaf8b47554a395eee36f",
+  "wall_seconds": 0.123,
+  "bridge": "Existing one-helper parametric reduction, as recorded at revision 0ebcd03"
+}

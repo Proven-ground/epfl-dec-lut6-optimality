@@ -1,0 +1,26 @@
+{
+  "K": 3,
+  "n": 5,
+  "exact_minimum": 36,
+  "levels": 3,
+  "counted_luts": 36,
+  "maximum_fanin": 3,
+  "independent_simulation_mismatches": 0,
+  "corrupted_output_mismatches": 4,
+  "network_sha256": "e35d93829025f8c714de942916702e660e524809870a93bbbe591ebeaf14070e",
+  "lower_key": "6370f9dfc4715a68_K3_n5_e3_sym-search_t120_f85718df5105",
+  "lower_cnf_sha256": "faf18853b89211aac5ca915745625cbab42087c3c106072ba0c107ed6d70b87d",
+  "lower_lrat_sha256": "faa24fb3c8beb77a55a7408caea873078caa334424410dae8940e2a221a004f0",
+  "cake_lpr_verdict": "s VERIFIED UNSAT",
+  "cake_command": [
+    "/opt/cake_lpr/cake_lpr",
+    "/results/6370f9dfc4715a68_K3_n5_e3_sym-search_t120_f85718df5105/instance.cnf",
+    "/results/6370f9dfc4715a68_K3_n5_e3_sym-search_t120_f85718df5105/proof.lrat"
+  ],
+  "invalid_certificate_exit": 0,
+  "invalid_certificate_output": "c Checking failed at line: 0. Reason: pivot must be non-zero\n",
+  "cake_binary_sha256": "72cd6fc6d93b5be1fd7de746113b033fa88c54e80c46a3d28f4aa6a3ec179c5d",
+  "independent_checker_sha256": "a97330335a74f36d9a14ef7f42fd5fea427dd7fe7052eaf8b47554a395eee36f",
+  "wall_seconds": 4.362,
+  "proof_scope": "Exact minimum conditional on the documented prefix-isolation and NPN completeness arguments; those new bridges are not yet Lean-checked"
+}

@@ -57,8 +57,8 @@ LRAT proof that cake_lpr accepts, so 2^n + 1 LUT-K nodes are impossible for the 
 The two-shared-LUT construction of the 258-LUT netlist does not transfer: the isolation instance with two shared
 LUT-K nodes (`family/family.py K n`), one formula per overlap of the two supports, is unsatisfiable in every case,
 while the same encoder finds the one- and two-shared-LUT networks at K = 6 for 7 and 8 inputs (`family/K6_n7.*`,
-`family/K6_n8.*`, the positive controls: n = 7 in 0.0 s, n = 8 in 58.1 s). The exact count at
-K = 3, 4, 5 is therefore open above 2^n + 1; at K = 6 it is 2^n + 2 = 258.
+`family/K6_n8.*`, the positive controls: n = 7 in 0.0 s, n = 8 in 58.1 s). At K = 6 the count is
+2^n + 2 = 258; the exact counts at K = 3, 4, 5, reached with more helpers or a third level, are in the section below.
 
 | K | n | reduced instance | CaDiCaL | cake_lpr | two shared LUTs (overlaps) |
 |---|---|---|---|---|---|
@@ -157,6 +157,24 @@ over inputs 0 to 5 with table `0x000ff0ffff0ff000`, 129 LUTs) is built, checked 
 K = 6, and admitted (`crosscheck/RESULTS_plant_witness.txt`):
 ```bash
 python3 crosscheck/plant_witness.py CADICAL WORKDIR
+```
+
+## Exact family counts for K = 3, 4, 5
+
+The family supplement `decoder-family-supplement.zip` (173,619,283 bytes, SHA-256
+`134d09dabe87bf005e04e2420e7af92a2ed0ec9e942fed0791156258a3218f58`) is attached to this repository's release; its
+files other than the compressed formulas and refutations are in `family_closure/`.
+The (K+2)-input decoder minima are 36, 67 and 130 LUT-K nodes, attained at depths 3, 2 and 3.
+At depth two the exact counts are 37, 67 and 131. All five netlists pass exhaustive replay;
+all 23 retained LRAT refutations pass cake_lpr. The new multi-helper reduction and its NPN
+normalization are written mathematical proofs, documented in the supplement's PROTOCOL.md.
+GenericLift.lean proves the 130 lower bound in Lean through the existing one-helper theorem;
+the stronger K3/36 and K4/67 reductions have not yet been machine-checked.
+
+After extracting the supplement:
+
+```sh
+python verify_release.py --cake-lpr /absolute/path/to/cake_lpr
 ```
 
 ## Tests that every check fails on a broken input

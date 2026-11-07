@@ -1,0 +1,160 @@
+.model decoder
+.inputs x0 x1 x2 x3 x4 x5
+.outputs o0 o1 o2 o3 o4 o5 o6 o7 o8 o9 o10 o11 o12 o13 o14 o15 o16 o17 o18 o19 o20 o21 o22 o23 o24 o25 o26 o27 o28 o29 o30 o31 o32 o33 o34 o35 o36 o37 o38 o39 o40 o41 o42 o43 o44 o45 o46 o47 o48 o49 o50 o51 o52 o53 o54 o55 o56 o57 o58 o59 o60 o61 o62 o63
+.names zero
+.names x2 x3 x4 x5 h0
+1000 1
+1010 1
+0110 1
+1110 1
+0001 1
+1001 1
+0101 1
+0111 1
+.names x0 x1 x4 x5 h1
+1000 1
+0010 1
+1010 1
+0110 1
+1001 1
+0101 1
+1101 1
+0111 1
+.names x0 x1 x2 x3 h2
+1000 1
+0100 1
+1100 1
+1010 1
+0101 1
+0011 1
+1011 1
+0111 1
+.names x3 x4 h0 h2 o0
+0000 1
+.names x3 x4 h0 h1 o1
+0001 1
+.names x0 x3 h1 h2 o2
+0001 1
+.names x0 x4 h1 h2 o3
+1001 1
+.names x1 x5 h0 h1 o4
+0010 1
+.names x4 x5 h0 h1 o5
+0011 1
+.names x0 x1 h0 h1 o6
+0110 1
+.names x0 x4 h0 h1 o7
+1010 1
+.names x0 x3 h0 h2 o8
+0100 1
+.names x0 x1 h0 h2 o9
+1000 1
+.names x2 x3 h0 h2 o10
+0101 1
+.names x1 x2 h0 h2 o11
+1000 1
+.names x1 x5 h1 h2 o12
+0001 1
+.names x2 x5 h0 h1 o13
+1001 1
+.names x1 x2 h1 h2 o14
+1101 1
+.names x2 x5 h0 h2 o15
+1000 1
+.names x0 x1 h0 h1 o16
+0001 1
+.names x0 x4 h0 h1 o17
+1101 1
+.names x1 x5 h0 h1 o18
+1001 1
+.names x4 x5 h0 h1 o19
+1000 1
+.names x1 x2 h1 h2 o20
+0110 1
+.names x3 x4 h0 h2 o21
+0111 1
+.names x1 x5 h1 h2 o22
+1010 1
+.names x3 x4 h0 h1 o23
+0110 1
+.names x0 x3 h1 h2 o24
+0110 1
+.names x0 x4 h1 h2 o25
+1110 1
+.names x2 x5 h0 h2 o26
+0011 1
+.names x2 x5 h0 h1 o27
+0010 1
+.names x0 x1 h0 h2 o28
+0011 1
+.names x0 x3 h0 h2 o29
+1111 1
+.names x1 x2 h0 h2 o30
+1111 1
+.names x2 x3 h0 h1 o31
+1110 1
+.names x2 x3 h0 h1 o32
+0010 1
+.names x1 x2 h0 h2 o33
+0011 1
+.names x0 x3 h0 h2 o34
+0011 1
+.names x0 x1 h0 h2 o35
+1111 1
+.names x2 x5 h0 h1 o36
+1110 1
+.names x2 x5 h0 h2 o37
+1111 1
+.names x0 x4 h1 h2 o38
+0010 1
+.names x0 x3 h1 h2 o39
+1010 1
+.names x3 x4 h0 h1 o40
+1010 1
+.names x1 x5 h1 h2 o41
+0110 1
+.names x3 x4 h0 h2 o42
+1011 1
+.names x1 x2 h1 h2 o43
+1010 1
+.names x4 x5 h0 h1 o44
+0100 1
+.names x1 x5 h0 h1 o45
+0101 1
+.names x0 x4 h0 h1 o46
+0001 1
+.names x0 x1 h0 h1 o47
+1101 1
+.names x2 x5 h0 h2 o48
+0100 1
+.names x1 x2 h1 h2 o49
+0001 1
+.names x2 x5 h0 h1 o50
+0101 1
+.names x1 x5 h1 h2 o51
+1101 1
+.names x1 x2 h0 h2 o52
+0100 1
+.names x2 x3 h0 h2 o53
+1001 1
+.names x0 x1 h0 h2 o54
+0100 1
+.names x0 x3 h0 h2 o55
+1000 1
+.names x0 x4 h0 h1 o56
+0110 1
+.names x0 x1 h0 h1 o57
+1010 1
+.names x4 x5 h0 h1 o58
+1111 1
+.names x1 x5 h0 h1 o59
+1110 1
+.names x0 x4 h1 h2 o60
+0101 1
+.names x0 x3 h1 h2 o61
+1101 1
+.names x3 x4 h0 h1 o62
+1101 1
+.names x3 x4 h0 h2 o63
+1100 1
+.end

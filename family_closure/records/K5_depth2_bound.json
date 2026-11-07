@@ -1,0 +1,97 @@
+{
+  "K": 5,
+  "n": 7,
+  "extra": 2,
+  "mode": "cert-isolation2",
+  "key": "301c2ca9ab15eaf2_K5_n7_e2_cert-isolation2_t60_a97330335a74",
+  "encoder_sha256": "301c2ca9ab15eaf204c5c4b4ef225f32416d3e3fab2a7b2ae77be86d3ed707d5",
+  "cadical_commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+  "cake_commit": "a36874a8b750b43fe4b385b8ddbf5b033e46a3fa",
+  "runner_sha256": "123720982c8e690bb373b89d039dc7a78f1dc5e5b30a48b71d40ab7888a4103c",
+  "isolation_encoder_sha256": "a97330335a74f36d9a14ef7f42fd5fea427dd7fe7052eaf8b47554a395eee36f",
+  "cases": [
+    {
+      "supports": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      ],
+      "variables": 14464,
+      "clauses": 95490,
+      "cnf_sha256": "b617b8c8427a00ba0e401c5eeb8c9fa8f044ccc63b997945363febf19ccd373e",
+      "solver_exit": 20,
+      "verified": true,
+      "cake_output": "s VERIFIED UNSAT\n",
+      "cake_exit": 0,
+      "lrat_sha256": "4f08df6fd4d5a4f1501bc7f03feeca8514a3466af183d56777654386026a2b10"
+    },
+    {
+      "supports": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "variables": 14464,
+      "clauses": 78850,
+      "cnf_sha256": "8e5ee1a95b3d281546f9a1000ab07ee69928be9a778384e20d97002b800cb633",
+      "solver_exit": 20,
+      "verified": true,
+      "cake_output": "s VERIFIED UNSAT\n",
+      "cake_exit": 0,
+      "lrat_sha256": "7407c7d227e766ff6521a088aba5c7a9506e573a1c057873b7cc29d01f54baea"
+    },
+    {
+      "supports": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "variables": 14464,
+      "clauses": 67970,
+      "cnf_sha256": "2e34f06a40dcd70b37d9a8df1b636023fb9fc3e3ad545f81b0aaba7536532580",
+      "solver_exit": 20,
+      "verified": true,
+      "cake_output": "s VERIFIED UNSAT\n",
+      "cake_exit": 0,
+      "lrat_sha256": "be2e46fa40d41ff2d3cd91691645856bb23db5ee629d13f223e5e04d40e23357"
+    }
+  ],
+  "answer": "CERTIFIED_DEPTH2_LOWER",
+  "depth2_lower": 131,
+  "scope": "all two-level networks; support pairs modulo primary-input permutation",
+  "wall_seconds": 111.189,
+  "max_rss_kib": 4202644
+}

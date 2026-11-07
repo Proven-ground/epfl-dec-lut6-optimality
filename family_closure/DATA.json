@@ -1,0 +1,203 @@
+{
+  "networks": [
+    {
+      "path": "netlists/K3_minimum.blif",
+      "K": 3,
+      "n": 5,
+      "luts": 36,
+      "depth": 3
+    },
+    {
+      "path": "netlists/K4_minimum.blif",
+      "K": 4,
+      "n": 6,
+      "luts": 67,
+      "depth": 2
+    },
+    {
+      "path": "netlists/K5_minimum.blif",
+      "K": 5,
+      "n": 7,
+      "luts": 130,
+      "depth": 3
+    },
+    {
+      "path": "netlists/K3_depth2.blif",
+      "K": 3,
+      "n": 5,
+      "luts": 37,
+      "depth": 2
+    },
+    {
+      "path": "netlists/K5_depth2.blif",
+      "K": 5,
+      "n": 7,
+      "luts": 131,
+      "depth": 2
+    }
+  ],
+  "certificates": [
+    {
+      "label": "K3_any_depth_35",
+      "cnf": "proofs/K3_any_depth_35.cnf.gz",
+      "lrat": "proofs/K3_any_depth_35.lrat.gz",
+      "cnf_sha256": "faf18853b89211aac5ca915745625cbab42087c3c106072ba0c107ed6d70b87d",
+      "lrat_sha256": "faa24fb3c8beb77a55a7408caea873078caa334424410dae8940e2a221a004f0"
+    },
+    {
+      "label": "K4_any_depth_66",
+      "cnf": "proofs/K4_any_depth_66.cnf.gz",
+      "lrat": "proofs/K4_any_depth_66.lrat.gz",
+      "cnf_sha256": "2408aa1d0f082ce78bf9cb9dbab5ca8ba4e76a4484d8e3d3e19a66d75c831fe1",
+      "lrat_sha256": "605ff0c9ea2a23915d48192c05033cbac5df62305ebc468bf22c2361c3a70617"
+    },
+    {
+      "label": "K5_any_depth_129",
+      "cnf": "proofs/K5_any_depth_129.cnf.gz",
+      "lrat": "proofs/K5_any_depth_129.lrat.gz",
+      "cnf_sha256": "6cafe2b39d4ef0494d8ad95a4a09c4e2c39d7bd5e5fa21ef1c738f009328e2b1",
+      "lrat_sha256": "5a2e6fcd9f40d4d1a8258020aab36f40b318872c0f097358af8314bb6205df48"
+    },
+    {
+      "label": "K3_depth2_case0",
+      "cnf": "proofs/K3_depth2_case0.cnf.gz",
+      "lrat": "proofs/K3_depth2_case0.lrat.gz",
+      "cnf_sha256": "649e6b5b14958ee2f7fe18639d99d7f64898bb1926a6d8aba198627cbc3db254",
+      "lrat_sha256": "65b629e9a3265352c78c27b8db6e5327d7863a83158c924269cbb0fa414afd43"
+    },
+    {
+      "label": "K3_depth2_case1",
+      "cnf": "proofs/K3_depth2_case1.cnf.gz",
+      "lrat": "proofs/K3_depth2_case1.lrat.gz",
+      "cnf_sha256": "dbf3130a0207ab18bcfb3e585fd47df6b11db3c1e682a056021bf35f09275309",
+      "lrat_sha256": "e3629d26c76c12a127c8e1308b56dd8f2a73e7786aa1b807aec404614f241aab"
+    },
+    {
+      "label": "K3_depth2_case2",
+      "cnf": "proofs/K3_depth2_case2.cnf.gz",
+      "lrat": "proofs/K3_depth2_case2.lrat.gz",
+      "cnf_sha256": "1dab830d2a6594e9c97268031523e42121af1dd1716c789fdca58089c0844709",
+      "lrat_sha256": "03abf08238bdf1b301e75458b125ba7d9d1f2b6dc7f81932058dc3e2826010d4"
+    },
+    {
+      "label": "K3_depth2_case3",
+      "cnf": "proofs/K3_depth2_case3.cnf.gz",
+      "lrat": "proofs/K3_depth2_case3.lrat.gz",
+      "cnf_sha256": "dc5643ff62e89a07647f11814593a9af0a80d6ac82d1707d17a7391ada2da4f9",
+      "lrat_sha256": "f207ec1ef67fbdf6100fdb10fc81bf8ea04dc8567247a1486ac9e501e791d84a"
+    },
+    {
+      "label": "K3_depth2_case4",
+      "cnf": "proofs/K3_depth2_case4.cnf.gz",
+      "lrat": "proofs/K3_depth2_case4.lrat.gz",
+      "cnf_sha256": "03524881965e1e318ab03a15d60f195f83b6bdfd01061ce1caaa18fcf6b536ae",
+      "lrat_sha256": "d82480c208c32382a24e68c46f73f7f191a88674eb4801fdf50629ecb666864c"
+    },
+    {
+      "label": "K3_depth2_case5",
+      "cnf": "proofs/K3_depth2_case5.cnf.gz",
+      "lrat": "proofs/K3_depth2_case5.lrat.gz",
+      "cnf_sha256": "d37dca180f3c82e563b2a6046304fd30592d29746d8232b3b4c2265749c9902f",
+      "lrat_sha256": "4a5212756ee57fdc75c2f1bc821551877f7548bb81b787c54afee2abb52eb2d8"
+    },
+    {
+      "label": "K3_depth2_case6",
+      "cnf": "proofs/K3_depth2_case6.cnf.gz",
+      "lrat": "proofs/K3_depth2_case6.lrat.gz",
+      "cnf_sha256": "b443107746d297a9a12f1cce8ed4c2ac0c81894cab1dd596aaba5af1b372e40f",
+      "lrat_sha256": "30451ee6ca2118cb9322161f3230838b93fe27ea18c5e3cf107713d23bd21bb1"
+    },
+    {
+      "label": "K3_depth2_case7",
+      "cnf": "proofs/K3_depth2_case7.cnf.gz",
+      "lrat": "proofs/K3_depth2_case7.lrat.gz",
+      "cnf_sha256": "cfacc1c861ae781fabfd11ea2d3af65a5517dc0b50c5a6b13964d58aadd1a828",
+      "lrat_sha256": "7a11cdcbe00fcd986e6ec93fec401f684300ab0ed8441c013ab04258afded42c"
+    },
+    {
+      "label": "K3_depth2_case8",
+      "cnf": "proofs/K3_depth2_case8.cnf.gz",
+      "lrat": "proofs/K3_depth2_case8.lrat.gz",
+      "cnf_sha256": "6cac2042ad909e2c35ac5ffabf247036b0cb234eee112dbc30b7910b7c4dd1c0",
+      "lrat_sha256": "ee5d38ba5bddc138175cc26d885fac9203469cad40db23d0c0943aefef76a59c"
+    },
+    {
+      "label": "K3_depth2_case9",
+      "cnf": "proofs/K3_depth2_case9.cnf.gz",
+      "lrat": "proofs/K3_depth2_case9.lrat.gz",
+      "cnf_sha256": "ea11a501ae6dd2c650da397133bd46d228035989220fd6d75fee15797e5ad821",
+      "lrat_sha256": "2218fec1332481ed39986681f47a00b9d3df46cb664f646822f6f568994f75bb"
+    },
+    {
+      "label": "K3_depth2_case10",
+      "cnf": "proofs/K3_depth2_case10.cnf.gz",
+      "lrat": "proofs/K3_depth2_case10.lrat.gz",
+      "cnf_sha256": "8ef3c203d418b4a47e8cafe94a91b8e721660ef96f3ad7168b529bf68265926a",
+      "lrat_sha256": "8b1a7f8c9421333ec5d63468840991210f48d37f1d72fa598cd813828719aee2"
+    },
+    {
+      "label": "K3_depth2_case11",
+      "cnf": "proofs/K3_depth2_case11.cnf.gz",
+      "lrat": "proofs/K3_depth2_case11.lrat.gz",
+      "cnf_sha256": "871ff97856e492260dece130f1d83d7115f8cd492b36b9530a6d6ae87984e52d",
+      "lrat_sha256": "858b993061986a22ed5cdfa90d9d54119529f9c4167dc5ebafd04084a546a65f"
+    },
+    {
+      "label": "K3_depth2_case12",
+      "cnf": "proofs/K3_depth2_case12.cnf.gz",
+      "lrat": "proofs/K3_depth2_case12.lrat.gz",
+      "cnf_sha256": "679a71412f3c16df1877f212afba3333c60774187c5f47f077b5088ac4828ecb",
+      "lrat_sha256": "115f15934f310d75740cec2b9f6ff697f739eec5a99ebded18fa855fb3fe1c00"
+    },
+    {
+      "label": "K3_depth2_case13",
+      "cnf": "proofs/K3_depth2_case13.cnf.gz",
+      "lrat": "proofs/K3_depth2_case13.lrat.gz",
+      "cnf_sha256": "23f73100257c136be8941f9f8b51392892ea135a08056fe27cde0684a1509f8e",
+      "lrat_sha256": "37e54efeea88ee9da0004b1cd99f6e8c436afec010060f64985070ef9f385398"
+    },
+    {
+      "label": "K3_depth2_case14",
+      "cnf": "proofs/K3_depth2_case14.cnf.gz",
+      "lrat": "proofs/K3_depth2_case14.lrat.gz",
+      "cnf_sha256": "0c790cfd6039a5f587b8c1f1dd971c8a1b08167e6e9517e0f813b34dfbf32bd3",
+      "lrat_sha256": "3774d90dfb2a873e1af8ebac937ea144e0b11dc693caaab40e035722fa6f0a2a"
+    },
+    {
+      "label": "K3_depth2_case15",
+      "cnf": "proofs/K3_depth2_case15.cnf.gz",
+      "lrat": "proofs/K3_depth2_case15.lrat.gz",
+      "cnf_sha256": "ece36ea3ee8573634c2336852636c447bf9ffe25282c4d5b62a022ce26fb55dc",
+      "lrat_sha256": "6a3b6cf024b763aa3112ed002b655e0f1dd72f0725767c67a55b5fd9b6029d66"
+    },
+    {
+      "label": "K3_depth2_case16",
+      "cnf": "proofs/K3_depth2_case16.cnf.gz",
+      "lrat": "proofs/K3_depth2_case16.lrat.gz",
+      "cnf_sha256": "5b1389618b72ec6ce4bc0b32d4961830d765f134780bc96a3ff5d1b35a8cdae7",
+      "lrat_sha256": "d4c760707e56061c52cf7461ca5a11f63bfd9b0fea8c275a7758a294e1a49d1f"
+    },
+    {
+      "label": "K5_depth2_case0",
+      "cnf": "proofs/K5_depth2_case0.cnf.gz",
+      "lrat": "proofs/K5_depth2_case0.lrat.gz",
+      "cnf_sha256": "b617b8c8427a00ba0e401c5eeb8c9fa8f044ccc63b997945363febf19ccd373e",
+      "lrat_sha256": "4f08df6fd4d5a4f1501bc7f03feeca8514a3466af183d56777654386026a2b10"
+    },
+    {
+      "label": "K5_depth2_case1",
+      "cnf": "proofs/K5_depth2_case1.cnf.gz",
+      "lrat": "proofs/K5_depth2_case1.lrat.gz",
+      "cnf_sha256": "8e5ee1a95b3d281546f9a1000ab07ee69928be9a778384e20d97002b800cb633",
+      "lrat_sha256": "7407c7d227e766ff6521a088aba5c7a9506e573a1c057873b7cc29d01f54baea"
+    },
+    {
+      "label": "K5_depth2_case2",
+      "cnf": "proofs/K5_depth2_case2.cnf.gz",
+      "lrat": "proofs/K5_depth2_case2.lrat.gz",
+      "cnf_sha256": "2e34f06a40dcd70b37d9a8df1b636023fb9fc3e3ad545f81b0aaba7536532580",
+      "lrat_sha256": "be2e46fa40d41ff2d3cd91691645856bb23db5ee629d13f223e5e04d40e23357"
+    }
+  ],
+  "semantic_scope": "K3=36 and K4=67 use the written prefix-isolation/NPN completeness arguments; K5 lower130 is Lean-checked. See PROTOCOL.md and GenericLift.lean."
+}
